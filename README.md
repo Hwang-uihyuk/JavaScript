@@ -41,6 +41,9 @@ Date와setInterval함수들을 사용해 크리스마스까지 며칠이 남았�
 
 
 제출방법
+![ChristMasEve time](https://user-images.githubusercontent.com/79883776/178781741-b3c8fea4-753d-40bc-8ac7-206a6e69ed41.gif)
+
+
 
 
 
