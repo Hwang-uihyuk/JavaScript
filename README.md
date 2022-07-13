@@ -35,7 +35,7 @@ btn.addEventListener("click", Play);
 
 
 
-
+<h1>ChristmasEve time </h1>
 Challenge goals:
 Date와setInterval함수들을 사용해 크리스마스까지 며칠이 남았는지 알려주는 시계를 만드세요. (12월 25일)
 
