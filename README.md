@@ -28,3 +28,43 @@ function Play(event) {
 }
 
 btn.addEventListener("click", Play);
+
+
+
+
+
+
+
+
+Challenge goals:
+Date와setInterval함수들을 사용해 크리스마스까지 며칠이 남았는지 알려주는 시계를 만드세요. (12월 25일)
+
+
+제출방법
+
+
+
+const clockTitle = document.querySelector(".js-clock");
+
+function time() {
+  const date1 = new Date(2022, 11, 24, 0, 0, 0);
+
+  const nowTime = new Date();
+  const numres = date1.getTime() - nowTime.getTime();
+
+  const day = Math.floor(numres / 1000 / 60 / 60 / 24);
+  const hours = Math.floor((numres % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minute = Math.floor((numres % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((numres % (1000 * 60)) / 1000);
+
+  clockTitle.innerText = `${day}d ${hours}h ${minute}m ${seconds}s`;
+
+  //console.log(date1.getTime()); 확인 ok
+  //console.log(nowTime.getTime()); 확인 ok
+  // console.log(numres); 확인 ok
+}
+setInterval(time, 1000);
+//1000분의 1초 단위로 나타낸 것이다.
+
+//그러면 크리스마스 까지의 시간을 getTime으로 밀리세컨드로구한후
+//현재까지의 시간과 뺀후 일,시간,분,초로 구해주면된다.
