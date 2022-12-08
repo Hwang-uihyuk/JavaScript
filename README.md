@@ -509,7 +509,7 @@ e => 변수의 첫번째 글자에는 영문자, $, 언더바만 가능하다.
 2번 => false
 3번 => true
 4번 => false
-5번 =>
+5번 => ==이 타입무시하고 하는거라 맞지 않냐?
 
 1. **다음 코드 실행 결과는 ?**
 - 3** 2;
@@ -517,15 +517,15 @@ e => 변수의 첫번째 글자에는 영문자, $, 언더바만 가능하다.
 1. **다음 코드 실행 결과는 ?**
 
 console.log(typeof NaN);
-
+boolean
 console.log(typeof undefined);
-
+undefinded
 console.log(typeof new Array());
-
+object
 console.log(typeof function() {});
-
+object
 console.log(typeof null);
-
+null
 
 
 </code>
