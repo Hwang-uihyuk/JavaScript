@@ -461,7 +461,7 @@
 
 
 <code>
-1. **다음의 코드 실행 결과는?**
+-  **다음의 코드 실행 결과는?**
 
 console.log(score);    
 
@@ -474,7 +474,7 @@ console.log(score);
 정답 : //undifinded
       // 40
         
-1. **다음 중 가능한 변수 네이밍 방식을 모두 고르시오**
+-  **다음 중 가능한 변수 네이밍 방식을 모두 고르시오**
 
 ⓐ var computer-science;
 
@@ -493,7 +493,7 @@ d => 첫번째 글자에 언더바 가능하다.(o)
 e => 변수의 첫번째 글자에는 영문자, $, 언더바만 가능하다.
 
 
-1. **다음 중 결과가 올바른 것은?**
+- **다음 중 결과가 올바른 것은?**
 
 ① NaN === NaN : true 
 
@@ -509,23 +509,23 @@ e => 변수의 첫번째 글자에는 영문자, $, 언더바만 가능하다.
 2번 => false
 3번 => true
 4번 => false
-5번 => ==이 타입무시하고 하는거라 맞지 않냐?
+5번 => true
 
-1. **다음 코드 실행 결과는 ?**
-- 3** 2;
-
-1. **다음 코드 실행 결과는 ?**
+-  **다음 코드 실행 결과는 ?**
+- -3** 2;
+==> 오류 => 음수는 괄호로 감싸야 한다.
+-  **다음 코드 실행 결과는 ?**
 
 console.log(typeof NaN);
-boolean
+==>number
 console.log(typeof undefined);
-undefinded
+==>undefinded
 console.log(typeof new Array());
-object
+==>object
 console.log(typeof function() {});
-object
+==>function
 console.log(typeof null);
-null
+==> object
 
 
 </code>
