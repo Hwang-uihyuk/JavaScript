@@ -669,6 +669,35 @@
     - name 프로퍼티
     - proto 접근자 프로퍼티
     - prototype 프로퍼티
+### 19_프로토타입
+
+- 19 프로토타입
+    - 클래스와 생성자 함수
+        - 두 개 모두 ‘프로토타입 기반’의 ‘인스턴트’를 생성하지만 정확히 동일하게 동작하지 않는다
+            - 프로토타입이란? ‘기존의 객체를 복사해서 새로운 객체를 만든다’라는 개념
+    - 자바스크립트를 이루고 있는 거의 모든 것이 ‘객체’이다
+- 19.1 객체 지향 프로그래밍
+- 19.2 상속과 프로토타입
+    - 자바스크립트는 프로토타입을 기반으로 상속을 구현하여 불필요한 중복을 제거한다.
+    
+    ```jsx
+    //생성자 함수 Circle을 생성했다.
+    function Circle(radius){
+    	this.radius = radius
+    }
+    
+    //Circle 생성자 함수가 생성한 모든 인스턴스가 getArea 메서드를
+    //공유해서 사용할 수 있도록 프로토타입에 추가한다.
+    //프로토타입은 Circle 생성자 함수의 prototype 프로퍼티에 바인딩 되어있다.
+    
+    Circle.prototype.getArea = function(){
+    	return Math.PI * this.radius ** 2
+    }
+    
+    //인스턴스 생성
+    const circle1 = new Circle(1)
+    const circle2 = new Circle(2)
+    ```
 ## 퀴즈
 <code>
     - **다음의 코드 실행 결과는?**
