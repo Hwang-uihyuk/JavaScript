@@ -698,6 +698,170 @@
     const circle1 = new Circle(1)
     const circle2 = new Circle(2)
     ```
+### 20_ strict mode
+
+- 20.1 strict mode란?
+
+```jsx
+function foo(){
+	x = 10;
+}
+foo()
+console.log(x)
+
+```
+
+오류를 발생시키기 어려운 개발 환경을 만들고 그 환경에서 개발하는 것이 오류를 줄이기 쉬운 근본적인 방법이다.
+
+- 20.2 strict mode의 적용
+    - 전역의 선두 or 함수 몸체 선두에
+    - ‘use strict’;를 추가한다.
+    - 
+    
+    ```jsx
+    'use strict'
+    
+    function foo(){
+    	x = 10;
+    }
+    foo();
+    
+    function foo(){
+    	`use strict';
+    	x = 10;
+    }
+    foo()
+    ```
+    
+- 20.3 전역에 strict mode를 적용하는 것은 피하자
+    - 
+- 20.4 함수 단위로 strict mode를 적용하는 것도 피하자
+- 20.5 strict mode가 발생시키는 에러
+    - 암묵적 전역
+        - 변수를 선언하지 않았을 경우
+    - 변수, 함수, 매개변수의 삭제
+        - 삭제하면 SyntaxError가 발생한다.
+    - 매개변수 이름이 중복이면 SyntaxError가 발생한다.
+    - with문의 사용
+- 20.6 strict mode 적용에 의한 변화
+    - strict mode에서 함수를 일반 함수로서 호출하면 this에 undefined가 바인딩된다.
+    - 생성자 함수가 아닌 일반 함수내부에서는 this를 사용할 필요가 없기 때문이다.
+    
+
+### 21_빌트인 객체
+
+- 21.1 자바스크립트 객체의 분류
+    - 표준 빌트인 객체
+    - 호스트 객체
+    - 사용자 정의 객체
+- 21.2 표준 빌트인 객체
+    - Math, Reflect, JSON을 제외한 표준 빌트인 객체는 모두 인스턴스를 생성할 수 있는 생성자 함수 객체!
+- 21.3 원시값과 래퍼 객체
+    - 문자열, 숫자, 불리언 값에 대해 객체처럼 접근하면 생성되는 임시 객체를 wrapper 객체라고 한다.
+- 21.4 전역 객체
+    - 브라우저 환경
+        - self,this,frames
+    - Node.js 환경
+        - global
+
+### 퀴즈 19~21
+
+1. console.log(obj.x)의 출력값은 무엇인가요? 
+    
+    ```jsx
+    const obj = {};
+    const parent = {x : 1};
+    
+    Object.getPrototypeOf(obj);
+    Object.setPrototypeOf(obj,parent);
+    
+    console.log(obj.x)
+    ```
+    
+
+ 2. strict mode의 적용이 되지 않는 것은?
+
+```jsx
+1번:
+'use strict';
+
+function foo(){
+	x = 10;
+}
+foo();
+
+2번:
+function foo(){
+	'use strict';
+	
+  x = 10;
+}
+foo();
+
+3번
+function foo(){
+	x = 10;
+	'use strict';
+}
+foo();
+```
+
+1. 자바스크립트 객체를 크게 3가지 객체로 분류할 수 있습니다.
+    1. 
+    2. 
+    3. 
+
+정답
+
+1 → 1이 출력됩니다
+
+2 → 3
+
+3 → a : 표준 빌트인 객체, b : 호스트 객체, c : 사용자 정의 객체,
+
+### 22_this
+
+- 22.1 this 키워드
+    
+    ```jsx
+     const person = {
+    	name : 'Lee',
+    	getName() {
+    		//메서드 내부에서 this는 메서드를 호출한 객체를 가리킨다.
+    		console.log(this); // {name : 'Lee' , getName : f}
+    		return this.name;
+    ```
+    
+- 22.2 함수 호출 방식과 this 바인딩
+    - this 바인딩(this에 바인딩될 값)은 함수 호출 방식,
+    - 즉 함수가 어떻게 호출 되었는지에 따라 동적으로 결정된다.
+    
+    ```jsx
+    // this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.
+    
+    const foo = function (){
+    	console.dir(this);
+    };
+    
+    // 동일한 함수도 다양한 방식으로 호출 될 수 있다.
+    
+    // 1. 일반 함수 호출
+    // foo 함수를 일반적인 방식으로 호출한다.
+    // foo 함수 내부의 this는 전역 객체 window를 가리킨다.
+    foo(); // window
+    
+    //2. 메서드 호출
+    //foo 함수를 프로퍼티 값으로 할당하여 호출
+    //foo 함수 내부의 this는 메서드를 호출하 객체 obj를 가리킨다.
+    const obj = { foo };
+    obg.foo(); // obj
+    
+    //3. 생성자 호출
+    // foo 함수를 new 연산자와 함께 생성자 함수로 호출
+    // foo 함수 내부의 this는 생성자 함수가 생성한 인스턴스를 가리킨다.
+    new foo(); //foo {}
+    
+    ```
 ## 퀴즈
 <code>
     - **다음의 코드 실행 결과는?**
