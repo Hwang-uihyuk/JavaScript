@@ -862,6 +862,39 @@ foo();
     new foo(); //foo {}
     
     ```
+    
+## 배열
+   - 메서드
+   	indexOf 
+	push
+	pop
+	unshift
+	shift
+	concat
+	splice 
+	slice
+	join
+	reverse
+	fill
+	includes
+	flat
+	sort
+##String
+  - 메서드
+ 	indexOf
+	search
+	includes
+	startsWith
+	endsWith
+	charAt
+	substring
+	slice
+	toLowerCase
+	toUpperCase
+	trim
+	repeat
+	replace
+	split
 ## 퀴즈
 <code>
     - **다음의 코드 실행 결과는?**
